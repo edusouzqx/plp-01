@@ -1,0 +1,73 @@
+# Preços do Lanchonete do LZ Restaurant
+Hamburguer = 20
+Batata = 10
+Refrigerante = 5
+Suco = 5
+Coxinha = 2
+Pastel = 1
+
+# Total da compra
+subtotal = 0
+
+# Cardápio
+print("===== Cardapio da casa =====")
+print("1 - Hambúrguer - R$ 20,00")
+print("2 - Batata - R$ 10,00")
+print("3 - Refrigerante - R$ 5,00")
+print("4 - Suco - R$ 5,00")
+print("5 - Coxinha - R$ 2,00")
+print("6 - Pastel - R$ 1,00")
+print("0 - Finalizar pedido")
+
+# Escolher os produtos
+while True:
+    produtos = int(input("\nEscolha o produto: "))
+
+    if produtos == 0:
+        break
+
+    quantidade = int(input("Digite a quantidade: "))
+
+    if produtos == 1:
+        valor = Hamburguer  * quantidade
+        subtotal += valor
+        print("Hámburguer adicionado com sucesso!")
+
+    elif produtos == 2:
+        valor = Batata * quantidade
+        subtotal += valor
+        print("Batata adicionado com sucesso!")
+
+    elif produtos == 3:
+        valor = Refrigerante * quantidade
+        subtotal += valor
+        print("Refrigerante adicionado com sucesso!")
+
+    elif produtos == 4:
+        valor = Suco * quantidade
+        subtotal += valor
+        print("Suco adicionado com sucesso!")
+
+    elif produtos == 5:
+        valor = Coxinha * quantidade
+        subtotal += valor
+        print("Coxinha adicionado com sucesso!")
+
+    elif produtos == 6:
+        valor = Pastel * quantidade
+        subtotal += valor
+        print("Pastel adicionado com sucessso!")
+    else :
+        print("Produto invalido!")
+
+# Taxa de serviço de 10%
+taxa = subtotal * 0.10
+
+#Total
+total = subtotal + taxa
+
+#Resultado
+print("\n===== CONTA =====")
+print(f"subtotal: R$ {subtotal:.2f}")
+print(f"taxa : R$ {taxa:.2f}")
+print(f"total: R$ {total:.2f}")
