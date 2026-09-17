@@ -1,0 +1,74 @@
+# Preços do cinema LZ
+ingresso = 25.00
+pipoca = 10.00
+hamburguer = 25.00
+batata = 10.00
+refrigerante = 05.00
+sucos = 05.00
+doces = 02.50
+# Quantidades
+qtd_ingressos = int(input("Quantos ingressos? "))
+qtd_meias = int(input("Quantos são meia-entrada? "))
+
+qtd_pipocas = int(input("Quantas pipocas? "))
+qtd_hamburgueres = int(input("Quantos hambúrgueres? "))
+qtd_batatas = int(input("Quantas batatas? "))
+qtd_refrigerantes = int(input("Quantos refrigerantes? "))
+qtd_sucos = int(input("Quantos sucos? "))
+qtd_doces = int(input("Quantos doces? "))
+
+# Subtotais
+subtotal_ingressos = qtd_ingressos * ingresso
+
+# Desconto das meias-entradas
+desconto_meia = qtd_meias * (ingresso / 2)
+
+subtotal_ingressos = subtotal_ingressos - desconto_meia
+
+subtotal_pipocas = qtd_pipocas * pipoca
+subtotal_hamburgueres = qtd_hamburgueres * hamburguer
+subtotal_batatas = qtd_batatas * batata
+subtotal_refrigerantes = qtd_refrigerantes * refrigerante
+subtotal_sucos = qtd_sucos * sucos
+subtotal_doces = qtd_doces * doces
+
+# Total preliminar
+total = (
+    subtotal_ingressos
+    + subtotal_pipocas
+    + subtotal_hamburgueres
+    + subtotal_batatas
+    + subtotal_refrigerantes
+    + subtotal_sucos
+    + subtotal_doces
+)
+
+# Promoção de combo
+if qtd_hamburgueres >= 2 and qtd_refrigerantes >= 2:
+    desconto_combo = 4.00
+else:
+    desconto_combo = 0.00
+
+total = total - desconto_combo
+
+# Taxa de conveniência de 4%
+taxa = total * 0.04
+
+# Total final
+total_final = total + taxa
+
+# Recibo
+print("\n========== RECIBO ==========")
+print(f"Ingressos:          R$ {subtotal_ingressos:.2f}")
+print(f"Pipocas:             R$ {subtotal_pipocas:.2f}")
+print(f"Hambúrgueres:        R$ {subtotal_hamburgueres:.2f}")
+print(f"Batatas:             R$ {subtotal_batatas:.2f}")
+print(f"Refrigerantes:       R$ {subtotal_refrigerantes:.2f}")
+print(f"Sucos:               R$ {subtotal_sucos:.2f}")
+print(f"Doces:               R$ {subtotal_doces:.2f}")
+print(f"Desconto meia:      -R$ {desconto_meia:.2f}")
+print(f"Desconto combo:     -R$ {desconto_combo:.2f}")
+print(f"Taxa de 4%:          R$ {taxa:.2f}")
+print("----------------------------")
+print(f"Total final:         R$ {total_final:.2f}")
+print("============================")
