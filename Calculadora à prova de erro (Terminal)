@@ -1,0 +1,27 @@
+
+def ler_numero(mensagem):
+    while True:
+        try:
+            numero = float(input(mensagem))
+            return numero
+
+        except ValueError:
+            print("Erro: digite um número válido!")
+
+
+def main():
+    print("=== CALCULADORA DE DIVISÃO ===")
+
+    dividendo = ler_numero("Digite o dividendo: ")
+    divisor = ler_numero("Digite o divisor: ")
+
+    try:
+        resultado = dividendo / divisor
+        print(f"Resultado da divisão: {resultado:.2f}")
+
+    except ZeroDivisionError:
+        print("Erro: não é possível dividir por zero!")
+
+
+if __name__ == "__main__":
+    main()
